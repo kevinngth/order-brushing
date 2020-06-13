@@ -1,6 +1,6 @@
 package com.kkbs.orderbrushing;
 
-public class Order {
+public class Order implements Comparable{
 
 	private long orderId;
 	private long shopId;
@@ -54,5 +54,11 @@ public class Order {
 			", userId=" + userId +
 			", eventTime='" + eventTime + '\'' +
 			'}';
+	}
+
+	@Override
+	public int compareTo(Object o) {
+		Order order = (Order) o;
+		return this.eventTime.compareTo( order.eventTime );
 	}
 }
